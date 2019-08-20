@@ -7,12 +7,7 @@ these languages.
 
 ## Getting Started
 
-To Run the program, navigate under \venv to find the Car.py file. Then using command prompt or a Python IDE, specify the python interpreter and run the Car.py file. 
-On Windows command prompt for example you can run the following: 
-
-```
-C:\path to\python.exe C:\path to\venv\Car.py
-```
+To Be Updated 
 
 
 ### Prerequisites
