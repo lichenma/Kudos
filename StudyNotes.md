@@ -124,6 +124,25 @@ pipenv install marshmallow==2.16.3
 ```
 
 
+# Python REST API Persistence with MongoDB
+
+Previously we created the schemas to represent incoming request data as well as data which this application will persist in the MongoDB. In order to connect and execute queries against the database, we are going to use a library created and maintained by MongoDB called `pymonogo`. 
+
+We are going to install the `pymongo` library as follows: 
+
+```
+pipenv install pymongo==3.7.2
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
