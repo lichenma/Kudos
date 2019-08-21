@@ -21,4 +21,15 @@ To assist with this, Python has a powerful tool to manage dependencies called `p
 pip install --user pipenv   
 ```
 
+Pipenv is a tool that provides all necessary means to create a virtual environment for a Python project. It automatically manages project packages through the `Pipfile` as the user installs or uninstalls packages. 
+
+
+With pip insalled we will use the following as the directory for backend code: 
+
+```
+kudos_oss 
+```
+
+
+
 
