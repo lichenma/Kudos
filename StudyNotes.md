@@ -24,11 +24,26 @@ pip install --user pipenv
 Pipenv is a tool that provides all necessary means to create a virtual environment for a Python project. It automatically manages project packages through the `Pipfile` as the user installs or uninstalls packages. 
 
 
-With pip insalled we will use the following as the directory for backend code: 
+With pip installed we will use the following as the directory for backend code: 
 
 ```
 kudos_oss 
 ```
+
+Previously we installed pipenv now we will create a Python 3 virtual environment and install Flask using the following command: 
+
+```
+pipenv install flask==1.0.2
+```
+
+
+Python 3 provides some features like `absolute_import` and `print_function` that will be used in this project. To import them we create the following files. 
+
+```
+touch __init__.py
+touch __main__.py
+```
+
 
 
 
