@@ -59,6 +59,28 @@ The backend for this project will need to implement the following user stories:
 
 We will be creating a classic REST API to expose endpoints which cover all the basic `CRUD (Create, Read, Update, Delete)` functionalities. By the end of this section, the backend application will handle the following HTTP calls: 
 
+```
+# For an authenticated user, fetch all favorited github open source projects 
+
+GET /kudos
+
+# Favorite a github open source project for an authenticated user 
+
+POST /kudos
+
+# Unfavorite a favorited github open source project 
+
+DELETE /kudos/:id
+```
+
+
+# Defining the Python Model Schemas 
+
+A database schema is a skeleton structure that represents the logical view of the entire database. It defines how the data is organized and how the relations among them are associated. It formulates all the constraints that are to be applied on the data. 
+
+For this project the REST API will have two core schemas which are the `GithubRepoSchema` and `KudoSchema`. The `GithubRepoSchema` wil represent a Github Repository sent by the clients meanwhile the `KudoSchema` will represent the data will we are going to persist in the database. 
+
+
 
 
 
