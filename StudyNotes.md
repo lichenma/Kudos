@@ -117,6 +117,14 @@ MongoDB is an example of a document database - you would use an ODM to translate
 
 As previously mentioned Marshmallow is an `ORM/ODM/framework-agnostic library` for serializing/deserializing complex data types such as objects to and from native Python data types.  
 
+Since we are using the `marshmallow` library, we have to install it using the following command: 
+
+```
+pipenv install marshmallow==2.16.3
+```
+
+
+
 
 
 
