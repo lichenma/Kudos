@@ -76,7 +76,7 @@ DELETE /kudos/:id
 
 # Defining the Python Model Schemas 
 
-A database schema is a skeleton structure that represents the logical view of the entire database. It defines how the data is organized and how the relations among them are associated. It formulates all the constraints that are to be applied on the data. 
+A **database schema** is a skeleton structure that represents the logical view of the entire database. It defines how the data is organized and how the relations among them are associated. It formulates all the constraints that are to be applied on the data. 
 
 For this project the REST API will have two core schemas which are the `GithubRepoSchema` and `KudoSchema`. The `GithubRepoSchema` wil represent a Github Repository sent by the clients meanwhile the `KudoSchema` will represent the data will we are going to persist in the database. 
 
@@ -101,6 +101,21 @@ class KudoSchema(GithubRepoSchema):
     user_id = fields.Email(required=True)
 ```
 
+As we can see from this schema python file, the schemas are inheriting from `Schema` a package from the `marshmallow library`. Marshmallow is an `ORM/ODM/framework-agnostic library` for serializing/deserializing complex data types such as objects to and from native Python data types. 
+
+
+## Overview on ORM and ODM 
+ORM (Object Relational Mapper) maps the relations between data meanwhile ODM (Object Document Mapper) deals with documents. 
+
+MySQL is an example of a relational database - you would use an ORM to translate between objects in code and the relational representation of the data. Examples of ORMs include nHibernate, Entity Framework, Dapper, etc. 
+
+MongoDB is an example of a document database - you would use an ODM to translate between objects in code and the document representation of the data. Mandango is an example of an ODM for MongoDB. 
+
+
+
+
+
+As previously mentioned Marshmallow is an `ORM/ODM/framework-agnostic library` for serializing/deserializing complex data types such as objects to and from native Python data types.  
 
 
 
