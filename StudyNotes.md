@@ -44,6 +44,25 @@ touch __init__.py
 touch __main__.py
 ```
 
+Inside the `__main__.py` file we have the following line of code: 
+
+```python
+from __future__ import absolute_import, print_function 
+```
+
+
+The backend for this project will need to implement the following user stories: 
+
+* Allows an authenticated user to favorite a github open source project 
+* Allows an authenticated user to unfavorite a github open source project 
+* Allows an authenticated user to list all bookmarked github open source projects previously favorited 
+
+We will be creating a classic REST API to expose endpoints which cover all the basic `CRUD (Create, Read, Update, Delete)` functionalities. By the end of this section, the backend application will handle the following HTTP calls: 
+
+
+
+
+
 
 
 
