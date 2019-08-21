@@ -81,6 +81,25 @@ A database schema is a skeleton structure that represents the logical view of th
 For this project the REST API will have two core schemas which are the `GithubRepoSchema` and `KudoSchema`. The `GithubRepoSchema` wil represent a Github Repository sent by the clients meanwhile the `KudoSchema` will represent the data will we are going to persist in the database. 
 
 
+Next we will create a new directory which will be used to create the `app` directory with the files `schema.py`, `service.py` and `__init__.py`. 
+
+
+Inside the `schema.py` file we will have the following content: 
+
+```python 
+from marshmallow import Schema, fields
+
+class GithubRepoSchema(Schema):
+    id = fields.Int(required=True)
+    repo_name = fields.Str()
+    full_name = fields.Str()
+    language = fields.Str()
+    description = fields.Str()
+    repo_url = fields.URL()
+
+class KudoSchema(GithubRepoSchema):
+    user_id = fields.Email(required=True)
+```
 
 
 
