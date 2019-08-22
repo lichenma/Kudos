@@ -144,6 +144,46 @@ Docker is a popular software for containerization - containers wrap up software 
 
 * Eliminate environment inconsistencies and the "works on my machine" problem by packaging the application, configs and dependencies into an isolated container 
 
+* Speeds up the onboarding process and removes the need to spend time setting up development environments 
+
+
+
+For this project `docker-compose` will manage the MongoDB container for us. 
+
+Create a `docker-compose.yml`
+
+```
+touch docker-compose.yml
+```
+
+This file will have the following content: 
+
+```yml
+version: '3'
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+     - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo_user
+      MONGO_INITDB_ROOT_PASSWORD: mongo_secret
+```
+
+Now to spin up the container run the following: 
+```
+docker-compose up
+```
+
+With MongoDB up and running we are ready to work the `MongoRepository` class. It is always a good idea to have a class with just a single responsibility so the only point to deal with the back-end MongoDB application is in the `MongoRepository`. 
+
+
+We start by 
+
+
+
+
 
 
 
