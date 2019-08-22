@@ -179,7 +179,33 @@ docker-compose up
 With MongoDB up and running we are ready to work the `MongoRepository` class. It is always a good idea to have a class with just a single responsibility so the only point to deal with the back-end MongoDB application is in the `MongoRepository`. 
 
 
-We start by 
+We start by creating a directory where all persistance related files should sit. 
+
+```
+mkdir -p app/repository
+```
+
+Then we create the file that will hold the MongoRepository class: 
+
+```
+touch app/repository/mongo.py
+touch app/repository/__init__.py
+```
+
+With `pymongo` installed and MongoDB up and running, we put the following content into `app/repository/mongo.py`: 
+
+```python
+import os 
+from pymongo import MongoClient 
+
+COLLECTION_NAME = 'kudos' 
+
+class MongoRepository(object):
+ def __init__(self):
+    mongo_url = os.environ.get('MONGO_URL')
+    self.db = MongoClient(mongo_url).kudos
+ def 
+```
 
 
 
