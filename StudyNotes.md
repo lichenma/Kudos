@@ -135,6 +135,19 @@ pipenv install pymongo==3.7.2
 ```
 
 
+We are going to user MongoDB for persistence in this project. There are many ways of incorporating MongoDB into a project, we previously used a method where we incorporated our projects with MLab - online MongoDB hosting. We can also have MongoDB installed on our machine or use docker to spin up a MongoDB container. For this project we are going to user `Docker` and `docker-compose` to manage a MongoDB container. 
+
+
+# Docker 
+
+Docker is a popular software for containerization - containers wrap up software and its dependencies into a standardized unit for software development that includes everything it need to run: code, runtime, system tools, and libraries. This guarantees that an application will alwasy run the same and makes collaboration as simple as sharing a container image. 
+
+* Eliminate environment inconsistencies and the "works on my machine" problem by packaging the application, configs and dependencies into an isolated container 
+
+
+
+
+
 
 
 
