@@ -234,7 +234,18 @@ def __init__(self):
     self.db = MongoClient(mongo_url).kudos
 ```
 
-The `__init__` method is the Python constructor. When we call `MongoRepository()`, Python will create an object for us and pass in any provided parameters. We can also see the `self` variable being passed into the constructor. The self variable represents the instance of the object itself (similar to `this` in Java). 
+The `__init__` method is the Python constructor. When we call `MongoRepository()`, Python will create an object for us and pass in any provided parameters. We can also see the `self` variable being passed into the constructor. The self variable represents the instance of the object itself (similar to `this` in Java). Most object-oriented languages pass this as a hidden parameter to the methods defined on an object - Python does not. It needs to be declared explicity so we create an instance of the `MongoRepository` class and call its methods, it will be passed automatically. For example when calling the delete function that we defined earlier, we will only pass in selector even though we defined both self and selector as arguments. 
+
+```python 
+ def delete(self, selector):
+    return self.db.kudos.delete_one(selector).deleted_count 
+``` 
+
+
+
+Going back to the application, we can see that the `MongoRepository` class is pretty straightforward and provides a database connection on its initialization and saves it to and then saves it to an instance variable to be used later by the following methods: `find_all`, `find`, `create`, `update`, and `delete`. Notice that all of these methods make use of the pymongo API. 
+
+
 
 
 
