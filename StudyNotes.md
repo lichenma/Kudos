@@ -204,9 +204,37 @@ class MongoRepository(object):
  def __init__(self):
     mongo_url = os.environ.get('MONGO_URL')
     self.db = MongoClient(mongo_url).kudos
- def 
+
+ def find_all(self, selector):
+    return self.db.kudos.find(selector)
+
+ def find(self, selector):
+    return self.db.kudos.find_one(selector)
+
+ def create(self, kudo):
+    return self.db.kudos.insert_one(kudo)
+
+ def update(self, selector, kudo):
+    return self.db.kudos.replace_one(selector, kudo).modified_count
+
+ def delete(self, selector):
+    return self.db.kudos.delete_one(selector).deleted_count 
 ```
 
+
+## Note About Python 
+
+My previously most familiar language is Java - used it for Spring on the backend and also for Leetcode since it tends to have a lot of support for it. Now when looking at some Python functions we can see the old object-oriented concepts show up again. 
+
+For the `MongoRepository` function/object we can see that we have the following method: 
+
+```python 
+def __init__(self):
+    mongo_url = os.environ.get('MONGO_URL')
+    self.db = MongoClient(mongo_url).kudos
+```
+
+The `__init__` method is the Python constructor. When we call `MongoRepository()`, Python will create an object for us and pass in any provided parameters. We can also see the `self` variable being passed into the constructor. The self variable represents the instance of the object itself (similar to `this` in Java). 
 
 
 
