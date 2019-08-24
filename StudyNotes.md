@@ -246,6 +246,44 @@ The `__init__` method is the Python constructor. When we call `MongoRepository()
 Going back to the application, we can see that the `MongoRepository` class is pretty straightforward and provides a database connection on its initialization and saves it to and then saves it to an instance variable to be used later by the following methods: `find_all`, `find`, `create`, `update`, and `delete`. Notice that all of these methods make use of the pymongo API.  
 
 
+The `MongoRepository` class reads an environment variable `MONGO_URL`. To export the environment variable, run: 
+
+
+
+```python 
+export MONGO_URL=monogdb://mongo_user:mongo_secret@0.0.0.0:27017/ 
+```
+
+
+To support integration with other databases in the future, we are going to decouple the application from MongoDB. For the simplicity we create an abstract class to represent a `Repository`, this class should be the one used throughout the application. 
+
+This will be the content of the `app/repository/__init__.py` file: 
+
+```python 
+class Repository(object): 
+    def __init__(self, adapter=None):
+        self.client = adapter()
+    
+    def find_all(self, selector):
+        return self.client.find_all(selector)
+
+    def find(self, selector): 
+        return self.client.find(selector)
+    
+    def create(self, kudo):
+        return self.client.create(kudo)
+
+    def update(self, selector, kudo):
+        return self.client.update(selector, kudo)
+
+    def delete(self, selector):
+        return self.client.delete(selector)
+```
+
+The **user story** that is currently being developed is to allow an authenticated user to create, delete and lsit all favorited Github open-source projects. In order to achieve this objective the `MongoRepository's` methods will be useful. 
+
+Note: In software development and product management, a user story is an informal description of one or more features of a software system 
+
 
 
 
