@@ -286,6 +286,11 @@ Note: In software development and product management, a user story is an informa
 
 
 
+Next we create a service class that knows how to translate the incoming request payload to our representation `KudoSchema` defined in the `app/kudo/schema.py`. The difference between the 
+
+
+
+
 
 
 
