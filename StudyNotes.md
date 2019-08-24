@@ -243,7 +243,7 @@ The `__init__` method is the Python constructor. When we call `MongoRepository()
 
 
 
-Going back to the application, we can see that the `MongoRepository` class is pretty straightforward and provides a database connection on its initialization and saves it to and then saves it to an instance variable to be used later by the following methods: `find_all`, `find`, `create`, `update`, and `delete`. Notice that all of these methods make use of the pymongo API. 
+Going back to the application, we can see that the `MongoRepository` class is pretty straightforward and provides a database connection on its initialization and saves it to and then saves it to an instance variable to be used later by the following methods: `find_all`, `find`, `create`, `update`, and `delete`. Notice that all of these methods make use of the pymongo API.  
 
 
 
