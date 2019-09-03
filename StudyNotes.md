@@ -286,7 +286,11 @@ Note: In software development and product management, a user story is an informa
 
 
 
-Next we create a service class that knows how to translate the incoming request payload to our representation `KudoSchema` defined in the `app/kudo/schema.py`. The difference between the 
+Next we create a service class that knows how to translate the incoming request payload to our representation `KudoSchema` defined in the `app/kudo/schema.py`. The difference between the incoming request payload, represent by `GithubSchema` and the object that will be persisted in the database `KudoSchema` is: 
+
+`GithubSchema` has a `user_Id` which determines who owns the object 
+
+The following is present in the `app/kudo/service.py` file: 
 
 
 
